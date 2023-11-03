@@ -4,3 +4,5 @@ export * from "./components";
 export * from "./styles";
 // @ts-expect-error
 export * from "./lib";
+// @ts-expect-error
+export * from "./hooks";
