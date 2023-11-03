@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${lato.variable}`}>
       <Providers>
-        <body className="h-screen text-sm text-white">
+        <body className="h-screen overflow-hidden text-sm text-white">
           <Header />
           {children}
         </body>

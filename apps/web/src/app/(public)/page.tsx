@@ -1,10 +1,13 @@
+import FilterLayout from '@/features/public/shared/layouts/containers/FilterLayout';
 import { Button } from 'shared/components/ui/Button'
 
 export default function Page() {
   return (
-    <main className='flex-1 bg-gray-950 h-[calc(100vh-80px)]'>
-      <h1>Web</h1>
-      <Button variant='outline'>Click me</Button>
-    </main>
+    <FilterLayout>
+      <section className='w-full'>
+        <h1>Content</h1>
+        <Button variant='outline'>Click me</Button>
+      </section>
+    </FilterLayout>
   );
 }
