@@ -7,7 +7,8 @@
     "paths": {
       "@shared/components/*": ["./components/*"],
       "@shared/styles/*": ["./styles/*"],
-      "@shared/lib/*": ["./lib/*"]
+      "@shared/lib/*": ["./lib/*"],
+      "@/*": ["./*"]
     }
   }
 }
