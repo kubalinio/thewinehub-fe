@@ -1,14 +1,16 @@
-import { BikeData } from '@/app/(public)/bikes/page'
+'use client'
+
 import { Target } from 'lucide-react'
 
 import BikeCard from '../components/TopViewBikes/BikeCard'
+import { useQuery } from '@tanstack/react-query'
+import { BikeDetails } from '@/api/actions/bike/bike.validators'
+import { bikeQueries } from '@/api/actions/bike/bike.queries'
 
-type Props = {
-    bikes: BikeData[]
-}
-
-export default function TopViewBikes({ bikes }: Props) {
-    const repeatedBikes = Array.from({ length: 4 }, () => bikes[0]);
+export default function TopViewBikes() {
+    // const repeatedBikes = Array.from({ length: 4 }, () => bikes[0]);
+    const { data } = useQuery({ queryKey: ['bikes'], queryFn: bikeQueries.getAllBikes })
+    // console.log(data)
 
     return (
         <section className='px-10'>
@@ -20,7 +22,7 @@ export default function TopViewBikes({ bikes }: Props) {
             </div>
 
             <div className='flex flex-row flex-wrap justify-center gap-5'>
-                {repeatedBikes.map(bike => (
+                {data.map(bike => (
                     <BikeCard key={bike.id} bike={bike} />
                 ))}
             </div>
